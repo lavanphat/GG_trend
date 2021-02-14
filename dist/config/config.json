@@ -1,0 +1,9 @@
+{
+    "dev": {
+        "db_name": "gg_trend",
+        "username": "postgres",
+        "password": "postgres",
+        "host": "localhost"
+    },
+    "production": {}
+}

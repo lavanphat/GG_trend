@@ -1,6 +1,5 @@
 import { Box } from '@admin-bro/design-system';
 import React, { useEffect, useState } from 'react';
-import { copyTag } from '../../api/keywords';
 import { fetchTopics } from '../../api/topic';
 import { Topic } from '../../type/topic';
 import HeaderDashboard from './header';
