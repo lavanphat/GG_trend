@@ -1,4 +1,5 @@
 import dotenv from 'dotenv';
+dotenv.config();
 import express, { Express, NextFunction, Request, Response } from 'express';
 import createError from 'http-errors';
 import logger from 'morgan';
@@ -9,7 +10,6 @@ import keywordRouter from './router/keywords';
 import './libs/cron';
 
 const app: Express = express();
-dotenv.config();
 
 // view engine setup
 app.use(logger('dev'));

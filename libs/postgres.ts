@@ -1,12 +1,20 @@
 import { Sequelize } from 'sequelize';
-import { dev as db } from '../config/config.json';
+import config from '../config/config.json';
+
+let db: any = null;
+
+if (process.env.NODE_ENV === 'dev') {
+  db = config.dev;
+} else {
+  db = config.production;
+}
 
 const sequelize: Sequelize = new Sequelize(
   db.db_name,
   db.username,
   db.password,
   {
-    host: 'localhost',
+    host: db.host,
     dialect: 'postgres',
     logging: false
   }

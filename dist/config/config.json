@@ -5,5 +5,10 @@
         "password": "postgres",
         "host": "localhost"
     },
-    "production": {}
+    "production": {
+        "db_name": "gkpawffz",
+        "username": "gkpawffz",
+        "password": "i2Eu99Ht89K5chBbdfnVK5I4Q3OJ5u8x",
+        "host": "john.db.elephantsql.com"
+    }
 }

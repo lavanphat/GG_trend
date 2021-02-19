@@ -70,22 +70,22 @@ const adminBro: AdminBro = new AdminBro({
 });
 
 export const rootPath: string = adminBro.options.rootPath;
-// export const router: any = AdminBroExpress.buildRouter(adminBro);
-export const router: any = AdminBroExpress.buildAuthenticatedRouter(
-  adminBro,
-  {
-    authenticate: (email: string, password: string) => {
-      if (
-        email === process.env.USERNAME_ADMIN &&
-        password === process.env.PASSWORD_ADMIN
-      ) {
-        return true;
-      }
-      return null;
-    },
-    cookieName: 'adminbro',
-    cookiePassword: 'somePassword'
-  },
-  undefined,
-  { resave: true, saveUninitialized: false, secret: 'adminbro' }
-);
+export const router: any = AdminBroExpress.buildRouter(adminBro);
+// export const router: any = AdminBroExpress.buildAuthenticatedRouter(
+//   adminBro,
+//   {
+//     authenticate: (email: string, password: string) => {
+//       if (
+//         email === process.env.USERNAME_ADMIN &&
+//         password === process.env.PASSWORD_ADMIN
+//       ) {
+//         return true;
+//       }
+//       return null;
+//     },
+//     cookieName: 'adminbro',
+//     cookiePassword: 'somePassword'
+//   },
+//   undefined,
+//   { resave: true, saveUninitialized: false, secret: 'adminbro' }
+// );
