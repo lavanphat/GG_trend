@@ -13,6 +13,7 @@ require("./utils/prototype");
 const topic_1 = __importDefault(require("./router/topic"));
 const keywords_1 = __importDefault(require("./router/keywords"));
 require("./libs/cron");
+require("./libs/cors");
 const app = express_1.default();
 app.use(morgan_1.default('dev'));
 app.use(admin_bro_1.rootPath, admin_bro_1.router);

@@ -8,6 +8,7 @@ import './utils/prototype';
 import topicRouter from './router/topic';
 import keywordRouter from './router/keywords';
 import './libs/cron';
+import './libs/cors';
 
 const app: Express = express();
 

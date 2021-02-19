@@ -93,5 +93,15 @@ const adminBro = new admin_bro_1.default({
     }
 });
 exports.rootPath = adminBro.options.rootPath;
-exports.router = express_1.default.buildRouter(adminBro);
+exports.router = express_1.default.buildAuthenticatedRouter(adminBro, {
+    authenticate: (email, password) => {
+        if (email === process.env.USERNAME_ADMIN &&
+            password === process.env.PASSWORD_ADMIN) {
+            return true;
+        }
+        return null;
+    },
+    cookieName: 'adminbro',
+    cookiePassword: 'somePassword'
+}, undefined, { resave: true, saveUninitialized: false, secret: 'adminbro' });
 //# sourceMappingURL=index.js.map

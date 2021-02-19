@@ -12,7 +12,9 @@
   "dependencies": {
     "@admin-bro/express": "^3.1.0",
     "@admin-bro/sequelize": "^1.2.1",
+    "@types/cors": "^2.8.10",
     "admin-bro": "^3.4.0",
+    "cors": "^2.8.5",
     "cron": "^1.8.2",
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",
