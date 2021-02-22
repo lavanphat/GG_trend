@@ -1,6 +1,6 @@
 import cors, { CorsOptions } from 'cors';
 
-const whitelist: string[] = ['https://gg-trend.glitch.me'];
+const whitelist: string[] = ['http://gg-trends.herokuapp.com'];
 const corsOptions: CorsOptions = {
   origin: (origin, callback) => {
     if (origin && whitelist.indexOf(origin) !== -1) {
