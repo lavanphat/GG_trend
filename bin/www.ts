@@ -7,6 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('demo:server');
 var http = require('http');
+const wakeDyno = require('woke-dyno');
 
 /**
  * Get port from environment and store in Express.
@@ -81,6 +82,10 @@ function onError(error: { syscall: string; code: any }) {
 
 function onListening() {
   var addr = server.address();
+  wakeDyno({
+    url: process.env.DYNO_HOST, // url string
+    interval: process.env.INTERVAL_WAKEUP
+  }).start(); // DYNO_URL should be the url of your Heroku app
   var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
   console.log('Listening on ' + bind);
   debug('Listening on ' + bind);
