@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const cors_1 = __importDefault(require("cors"));
-const whitelist = ['https://gg-trend.glitch.me'];
+const whitelist = ['http://gg-trends.herokuapp.com'];
 const corsOptions = {
     origin: (origin, callback) => {
         if (origin && whitelist.indexOf(origin) !== -1) {

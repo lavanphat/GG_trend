@@ -2,6 +2,7 @@
 var app = require('../app');
 var debug = require('debug')('demo:server');
 var http = require('http');
+const wakeDyno = require('woke-dyno');
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 var server = http.createServer(app);
@@ -38,6 +39,10 @@ function onError(error) {
 }
 function onListening() {
     var addr = server.address();
+    wakeDyno({
+        url: process.env.DYNO_HOST,
+        interval: process.env.INTERVAL_WAKEUP
+    }).start();
     var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
     console.log('Listening on ' + bind);
     debug('Listening on ' + bind);
